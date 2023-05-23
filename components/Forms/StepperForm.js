@@ -79,7 +79,7 @@ export default function StepperForm({ children, defaultValues, stepsName = [], s
                         <>
                             <Box sx={{
                                 display: "flex",
-                                bgcolor: "#DEE7EB",
+                                bgcolor: "background.project.paper.main",
                                 width: "100%",
                                 p: 1,
                                 my: 4,
@@ -91,7 +91,7 @@ export default function StepperForm({ children, defaultValues, stepsName = [], s
                                     const labelProps = {};
                                     return (
                                         <Box onClick={() => activeStep > index ? setActiveStep(index) : null} key={label + index} {...stepProps}
-                                            sx={{ ...(activeStep === index ? { bgcolor: "#044766", color: "white" } : { bgcolor: "white", color: "#044766" }), width: "100%", borderRadius: 1, p: 2, ...(index !== 0 && { ml: 1 }) }}
+                                            sx={{ ...(activeStep === index ? { bgcolor: "background.project.primary.main", color: "white" } : { bgcolor: "white", color: "primary.main" }), width: "100%", borderRadius: 1, p: 2, ...(index !== 0 && { ml: 1 }) }}
                                         >
                                             <Typography sx={{ textAlign: "center", fontWeight: 600 }} variant="body1" color="inherit">{label}</Typography>
                                         </Box>

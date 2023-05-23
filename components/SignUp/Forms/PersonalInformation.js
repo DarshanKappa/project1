@@ -103,14 +103,14 @@ function PersonalInformation({ sx }) {
 					>
 						{
 							options?.map(opt => (
-								<Option value={opt}>{opt}</Option>
+								<Option key={opt} value={opt}>{opt}</Option>
 							))
 						}
 					</SelectInput>
 				</Box>
 
 				<Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
-					<Button size="large" type="submit" sx={{ bgcolor: "#044766", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "#044766" } }} variant="contained">Proceed</Button>
+					<Button size="large" type="submit" sx={{ bgcolor: "primary", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "primary" } }} variant="contained">Proceed</Button>
 				</Box>
 			</form>
 		</>

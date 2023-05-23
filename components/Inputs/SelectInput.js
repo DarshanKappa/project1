@@ -55,7 +55,7 @@ function SelectInput({ children, register = () => { }, label = "", name = "", ic
                             width: "80%",
                             alignSelf: "end",
                             mt: 2,
-                            bgcolor: "#DEE7EB",
+                            bgcolor: "background.project.paper.main",
                             borderRadius: "4px"
                         }}
                     >

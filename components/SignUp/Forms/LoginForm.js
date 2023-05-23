@@ -79,7 +79,7 @@ function LoginForm({ sx }) {
 				</Box>
 
 				<Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
-					<Button size="large" type="submit" sx={{ bgcolor: "#044766", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "#044766" } }} variant="contained">Login</Button>
+					<Button size="large" type="submit" sx={{ bgcolor: "primary", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "primary" } }} variant="contained">Login</Button>
 				</Box>
 			</form>
 		</>

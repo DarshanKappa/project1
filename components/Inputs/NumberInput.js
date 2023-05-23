@@ -1,20 +1,20 @@
 import { Box, Divider, Input, InputAdornment, InputBase, Stack, TextField, Typography } from "@mui/material";
 
 
-function SimpleInput({ register = () => { }, label, name, icon, sx, inputProps, ...restProps }) {
+function NumberInput({ register = () => { }, label, name, icon, sx, ...restProps }) {
 	return (
 		<>
 			<Stack sx={{ width: "100%", ...sx }}>
 				<Typography sx={{ mb: 1, userSelect: "none" }} variant="body1" color="black	">{label}</Typography>
 				<InputBase
 					{...(name && register(name))}
+					type="number"
 					fullWidth
 					sx={{
 						height: 50,
 						px: 2,
 						bgcolor: "background.project.paper.main",
 						borderRadius: "4px",
-						...inputProps?.style
 					}}
 					startAdornment={icon && (
 						<InputAdornment position="start">
@@ -33,4 +33,4 @@ function SimpleInput({ register = () => { }, label, name, icon, sx, inputProps, 
 	);
 }
 
-export default SimpleInput;
+export default NumberInput;

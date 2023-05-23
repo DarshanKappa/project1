@@ -114,7 +114,7 @@ function CompanyInformation({ sx }) {
 				</Box>
 
 				<Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
-				<Button type="submit" sx={{ bgcolor: "#044766", ":hover": { bgcolor: "#044766" } }} variant="contained">Process</Button>
+				<Button type="submit" sx={{ bgcolor: "primary", ":hover": { bgcolor: "primary" } }} variant="contained">Process</Button>
 				</Box>
 			</form>
 		</>

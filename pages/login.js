@@ -49,7 +49,7 @@ function LogIn() {
 
 			</Grid>
 
-			<Grid item xs={6} sx={{ bgcolor: "#044766" }}  >
+			<Grid item xs={6} sx={{ bgcolor: "background.project.primary.main" }}  >
 			</Grid>
 		</Grid>
 	);

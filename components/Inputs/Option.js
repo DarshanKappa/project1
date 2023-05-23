@@ -16,7 +16,7 @@ function Option({ children, value: optionValue }) {
                     px: 2,
                     cursor: "pointer",
                     ...(value === optionValue &&
-                        { bgcolor: "#044766", color: "white" }),
+                        { bgcolor: "background.project.primary.main", color: "white" }),
                     ":hover": {
                         bgcolor: "#04476626"
                     }
