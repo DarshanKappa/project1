@@ -8,8 +8,9 @@ import StepperForm from "../components/Forms/StepperForm";
 import PersonalInformation from "../components/SignUp/Forms/PersonalInformation";
 import CompanyInformation from "../components/SignUp/Forms/CompanyInformation";
 import Page from "../components/Page";
-import LoginForm from "../components/SignUp/Forms/LoginForm";
 import Link from "next/link";
+import AdminLoginForm from "../components/SignUp/Forms/AdminLoginForm";
+import UserLoginForm from "../components/SignUp/Forms/UserLoginForm";
 
 const stepsName = [
 	"Admin",
@@ -21,29 +22,33 @@ function LogIn() {
 	return (
 		<Grid container height="100vh">
 			<Grid item xs={6} sx={{ px: 10, py: 15, display: "flex", justifyContent: "center" }}>
-				<Stack sx={{width: 500}}>
+				<Stack sx={{ width: 500 }}>
 
 
 					<Typography sx={{ fontWeight: 600 }} variant="h6" color="initial">
-                        Login to your Account
-                    </Typography>
+						Login to your Account
+					</Typography>
 
-					<StepperForm stepsName={stepsName} sx={{
-						display: "flex",
-						flexDirection: "column",
-						placeItems: "center",
-						width: { xs: 100, sm: 100, md: 100, lg: "100%" }
-					}}>
+					<StepperForm
+						stepper={false}
+						stepsName={stepsName}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							placeItems: "center",
+							width: { xs: 100, sm: 100, md: 100, lg: "100%" }
+						}}
+					>
 						{[
-							<LoginForm sx={{  width: "100%" }} />
+							<AdminLoginForm sx={{ width: "100%" }} />
 							,
-							<LoginForm sx={{  width: "100%" }} />
+							<UserLoginForm sx={{ width: "100%" }} />
 						]}
 					</StepperForm>
 
 					<Typography sx={{ textAlign: "center" }} variant="body1" color="initial">
-                        Don't have a account? <Link href="#" style={{textDecoration: "underline", color: "#5DB03E"}}>Signup</Link>
-                    </Typography>
+						Don't have a account? <Link href="#" style={{ textDecoration: "underline", color: "#5DB03E" }}>Signup</Link>
+					</Typography>
 
 				</Stack>
 

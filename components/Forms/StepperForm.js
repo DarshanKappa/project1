@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 
 export const FormStepperContext = React.createContext()
 
-export default function StepperForm({ children, defaultValues, stepsName = [], sx }) {
+export default function StepperForm({ children, defaultValues, stepsName = [], sx, stepper=true }) {
 
     const [activeStep, setActiveStep] = React.useState(0);
 
@@ -41,12 +41,16 @@ export default function StepperForm({ children, defaultValues, stepsName = [], s
     }
 
     const submitHold = (fun) => {
-        if (activeStep < records.length) {
-            setRecords(r => { r.splice(activeStep, 1, fun); return r })
-        } else {
-            setRecords(r => { r.splice(activeStep, 0, fun); return r })
+        if(stepper){
+            if (activeStep < records.length) {
+                setRecords(r => { r.splice(activeStep, 1, fun); return r })
+            } else {
+                setRecords(r => { r.splice(activeStep, 0, fun); return r })
+            }
+            setActiveStep(s => s + 1)
+        }else{
+            fun()
         }
-        setActiveStep(s => s + 1)
     }
 
     return (
@@ -90,7 +94,7 @@ export default function StepperForm({ children, defaultValues, stepsName = [], s
                                     const stepProps = {};
                                     const labelProps = {};
                                     return (
-                                        <Box onClick={() => activeStep > index ? setActiveStep(index) : null} key={label + index} {...stepProps}
+                                        <Box onClick={() => ((!stepper) || (activeStep > index)) ? setActiveStep(index) : null} key={label + index} {...stepProps}
                                             sx={{ ...(activeStep === index ? { bgcolor: "background.project.primary.main", color: "white" } : { bgcolor: "white", color: "primary.main" }), width: "100%", borderRadius: 1, p: 2, ...(index !== 0 && { ml: 1 }) }}
                                         >
                                             <Typography sx={{ textAlign: "center", fontWeight: 600 }} variant="body1" color="inherit">{label}</Typography>

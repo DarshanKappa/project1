@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import SimpleInput from "../../Inputs/SimpleInput";
 import PasswordInput from "../../Inputs/PasswordInput";
 import SelectInput from "../../Inputs/SelectInput";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FormStepperContext } from "../../Forms/StepperForm";
 import UserDuotoneSVG from "../../SVGs/UserDuotone";
 import UserDuotone2SVG from "../../SVGs/UserDuotone2SVG";
@@ -18,7 +18,7 @@ const options = [
 	"Company Secretary"
 ]
 
-function PersonalInformation({ sx }) {
+function AdminLoginForm({ sx }) {
 
 	const {
 		form: {
@@ -41,22 +41,17 @@ function PersonalInformation({ sx }) {
 	} = useContext(FormStepperContext)
 
 	const onSubmit = (data) => {
-		console.log(watch())
 		submitHold(() => {
-			console.log("Personal info")
+			console.log('------Submit Admin Login Form-----------')
 		})
 	}
-
-	console.log(watch())
-
-	const [count, setCount] = useState(0)
 
 	return (
 		<>
 			<form onSubmit={handleSubmit(onSubmit)} style={{width: "100%"}}>
 				<Box sx={{
 					width: "100%",
-					pr: 4,
+					// pr: 4,
 					overflowY: "auto",
 					display: "flex",
 					flexDirection: "column",
@@ -64,27 +59,10 @@ function PersonalInformation({ sx }) {
 					...sx
 				}}
 				>
-					<Button variant="contained" onClick={()=>setCount(count+1)}>{count}</Button>
-					<SimpleInput
-						register={register}
-						label="Name"
-						name="personal.name"
-						icon={<UserDuotoneSVG />}
-						sx={{ my: 1 }}
-						required
-					/>
-					<SimpleInput
-						register={register}
-						label="Username"
-						name="personal.username"
-						icon={<UserDuotone2SVG />}
-						sx={{ my: 1 }}
-						required
-					/>
 					<SimpleInput
 						register={register}
 						label="Email"
-						name="personal.email"
+						name="admin.email"
 						type="email"
 						icon={<MessageSVG />}
 						sx={{ my: 1 }}
@@ -93,37 +71,19 @@ function PersonalInformation({ sx }) {
 					<PasswordInput
 						register={register}
 						label="Password"
-						name="personal.password"
+						name="admin.password"
 						icon={<LockSVG />}
 						sx={{ my: 1 }}
 						required
 					/>
-					<SelectInput
-						register={register}
-						label="Profession"
-						name="personal.profession"
-						icon={<GroupAddUserSVG />}
-						sx={{ my: 1 }}
-						required
-						// control={control}
-						setValue={setValue}
-						watch={watch}
-
-					>
-						{
-							options?.map(opt => (
-								<Option key={opt} value={opt}>{opt}</Option>
-							))
-						}
-					</SelectInput>
 				</Box>
 
 				<Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
-					<Button size="large" type="submit" sx={{ bgcolor: "primary", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "primary" } }} variant="contained">Proceed</Button>
+					<Button size="large" type="submit" sx={{ bgcolor: "primary", fontWeight: 600, textTransform: "none", ":hover": { bgcolor: "primary" } }} variant="contained">Login</Button>
 				</Box>
 			</form>
 		</>
 	);
 }
 
-export default PersonalInformation;
+export default AdminLoginForm;

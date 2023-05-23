@@ -18,7 +18,7 @@ const options = [
 	"Company Secretary"
 ]
 
-function LoginForm({ sx }) {
+function UserLoginForm({ sx }) {
 
 	const {
 		form: {
@@ -42,6 +42,7 @@ function LoginForm({ sx }) {
 
 	const onSubmit = (data) => {
 		submitHold(() => {
+			console.log('------Submit User Login Form-----------')
 
 		})
 	}
@@ -62,7 +63,7 @@ function LoginForm({ sx }) {
 					<SimpleInput
 						register={register}
 						label="Email"
-						name="personal.email"
+						name="user.email"
 						type="email"
 						icon={<MessageSVG />}
 						sx={{ my: 1 }}
@@ -71,7 +72,7 @@ function LoginForm({ sx }) {
 					<PasswordInput
 						register={register}
 						label="Password"
-						name="personal.password"
+						name="user.password"
 						icon={<LockSVG />}
 						sx={{ my: 1 }}
 						required
@@ -86,4 +87,4 @@ function LoginForm({ sx }) {
 	);
 }
 
-export default LoginForm;
+export default UserLoginForm;

@@ -6,12 +6,12 @@ import FocusableComponent from "./FocusableComponent";
 export const SelectContext = React.createContext();
 
 
-function SelectInput({ children, register = () => { }, label = "", name = "", icon, sx, ...restProps }) {
+function SelectInput({ children, register = () => { }, label = "", name = "", icon, sx, watch, setValue, ...restProps }) {
 
     const ref = useRef()
+    const value = watch(name)
 
-    const [value, setValue] = useState("");
-    const [optionsVisible, setOptionsVisible] = useState(false);
+    const [optionsVisible, setOptionsVisible] = useState(watch(name));
 
     useEffect(() => {
         ref?.current?.focus()
@@ -20,9 +20,9 @@ function SelectInput({ children, register = () => { }, label = "", name = "", ic
     const onSelectClick = () => {
         setOptionsVisible(!optionsVisible)
     }
-
+    
     const preSetValue = (value)=>{
-        setValue(value)
+        setValue(name, value)
         setOptionsVisible(false)
     }
 
@@ -36,7 +36,6 @@ function SelectInput({ children, register = () => { }, label = "", name = "", ic
 
                     <SimpleInput
                         label={label}
-                        register={register}
                         name={name}
                         icon={icon}
                         value={value}
@@ -52,7 +51,7 @@ function SelectInput({ children, register = () => { }, label = "", name = "", ic
 
                     <Stack
                         sx={{
-                            width: "80%",
+                            width: "90%",
                             alignSelf: "end",
                             mt: 2,
                             bgcolor: "background.project.paper.main",

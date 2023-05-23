@@ -46,7 +46,7 @@ function CompanyInformation({ sx }) {
 
 	const onSubmit = (data) => {
 		submitHold(() => {
-
+			console.log("Company info")
 		})
 	}
 

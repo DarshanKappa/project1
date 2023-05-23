@@ -7,7 +7,7 @@ import Person from '@mui/icons-material/Person';
 function SVG({ className }) {
     return (
         <>
-            <SvgIcon width="12" height="8" viewBox="-2 -2 16 12" className={className}>
+            <SvgIcon width="12" height="8" viewBox="-3 -3 18 14" className={className}>
                 <path d="M1.41 0L6 4.94467L10.59 0L12 1.52227L6 8L0 1.52227L1.41 0Z" fill="#044766" fill-opacity="0.75" />
             </SvgIcon>
         </>
@@ -39,19 +39,46 @@ function DocumentsToolBar({ }) {
                 <Box sx={{ m: 1 }}>
 
                     <Select
-                        // variant="filled"
+                        size="small"
                         variant="outlined"
-                        sx={{ width: 400, outline: "none", '.MuiOutlinedInput-notchedOutline': { border: 0,  }, '.Mui-focused': { borderWidth: 0 } }}
+                        sx={{ width: 300, mr: 1, color: "primary.main", bgcolor: "#D9D9D9", '.MuiOutlinedInput-notchedOutline': { border: "none",  } }}
                         IconComponent={SVG}
-
-
+                        defaultValue={"null"}
+                        onChange={(e) => console.log(e)}
                     >
-                        <MenuItem value={null}>--------</MenuItem>
-                        <MenuItem value={"Darshan1"}>Darshan1</MenuItem>
-                        <MenuItem value={"Darshan2"}>Darshan2</MenuItem>
-                        <MenuItem value={"Darshan3"}>Darshan3</MenuItem>
+                        <MenuItem value={"null"} sx={{color: "gray"}}>Client</MenuItem>
+                        <MenuItem value={"Text"}>Darshan1</MenuItem>
+                        <MenuItem value={"Filled"}>Darshan2</MenuItem>
+                        <MenuItem value={"Outlined"}>Darshan3</MenuItem>
                     </Select>
 
+                    <Select
+                        size="small"
+                        variant="outlined"
+                        sx={{ width: 300, mr: 1, color: "primary.main", bgcolor: "#D9D9D9", '.MuiOutlinedInput-notchedOutline': { border: "none",  } }}
+                        IconComponent={SVG}
+                        defaultValue={"null"}
+                        onChange={(e) => console.log(e)}
+                    >
+                        <MenuItem value={"null"} sx={{color: "gray"}}>Client</MenuItem>
+                        <MenuItem value={"Text"}>Darshan1</MenuItem>
+                        <MenuItem value={"Filled"}>Darshan2</MenuItem>
+                        <MenuItem value={"Outlined"}>Darshan3</MenuItem>
+                    </Select>
+
+                    <Select
+                        size="small"
+                        variant="outlined"
+                        sx={{ width: 300, mr: 1, color: "primary.main", bgcolor: "#D9D9D9", '.MuiOutlinedInput-notchedOutline': { border: "none",  } }}
+                        IconComponent={SVG}
+                        defaultValue={"null"}
+                        onChange={(e) => console.log(e)}
+                    >
+                        <MenuItem value={"null"} sx={{color: "gray"}}>Client</MenuItem>
+                        <MenuItem value={"Text"}>Darshan1</MenuItem>
+                        <MenuItem value={"Filled"}>Darshan2</MenuItem>
+                        <MenuItem value={"Outlined"}>Darshan3</MenuItem>
+                    </Select>
 
                 </Box>
                 <Divider />
