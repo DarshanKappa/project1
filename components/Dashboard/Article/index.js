@@ -1,12 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
-import MainLayout from "../../components/MainLayout";
-import MainPage from "../../components/MainPage";
-import Table from "../../components/Table/DataTable";
-import AdvanceTable from "../../components/Table/AdvanceTable";
+import MainLayout from "../../MainLayout";
+import MainPage from "../../MainPage";
+import Table from "../../Table/DataTable";
+import AdvanceTable from "../../Table/AdvanceTable";
 import React, { useState } from "react";
-import SlideBar from "../../components/SlideBar";
-import ArticleForm from "../../components/Dashboard/ArticleForm";
-import Modal from "../../components/Modal";
+import SlideBar from "../../SlideBar";
+import ArticleForm from "./ArticleForm";
+import Modal from "../../Modal";
 
 const headers = [
     "Name", "Username", "Email", "Contact", "Company",
@@ -48,7 +48,7 @@ function Articles({ }) {
         buttons: [
             <Button variant="outlined" color="primary" key="columns">Columns</Button>,
             <Button variant="outlined" color="primary" key="filter">Filter</Button>,
-            <Button variant="outlined" color="success" key="new_chat" onClick={onNewClient}>New Client</Button>,
+            <Button variant="outlined" color="success" key="new_chat" onClick={onNewClient}>New Article</Button>,
         ]
     }
 

@@ -1,15 +1,15 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
-import SimpleInput2 from "../Inputs/SimpleInput2";
-import UserDuotoneSVG from "../SVGs/UserDuotone";
+import SimpleInput2 from "../../Inputs/SimpleInput2";
+import UserDuotoneSVG from "../../SVGs/UserDuotone";
 import PersonIcon from '@mui/icons-material/Person';
-import PasswordInput2 from "../Inputs/PasswordInput2";
+import PasswordInput2 from "../../Inputs/PasswordInput2";
 import { useForm } from "react-hook-form";
-import UserAddSVG from "../SVGs/Article/UserAddSVG";
-import CertificateSVG from "../SVGs/Article/CertificateSVG";
-import ChatPlusSVG from "../SVGs/Article/ChatPlusSVG";
-import MessageSVG from "../SVGs/Article/MessageSVG";
-import LockAltSVG from "../SVGs/Article/LockAltSVG";
-import PhoneSVG from "../SVGs/Article/PhoneSVG";
+import UserAddSVG from "../../SVGs/Article/UserAddSVG";
+import CertificateSVG from "../../SVGs/Article/CertificateSVG";
+import ChatPlusSVG from "../../SVGs/Article/ChatPlusSVG";
+import MessageSVG from "../../SVGs/Article/MessageSVG";
+import LockAltSVG from "../../SVGs/Article/LockAltSVG";
+import PhoneSVG from "../../SVGs/Article/PhoneSVG";
 
 
 
@@ -39,8 +39,9 @@ function ArticleForm({ onCloseModal }) {
                             name="username"
                             label="Username"
                             icon={<UserAddSVG />}
+                            inputProps={{ style: { borderRadius: "none" } }}
                             required
-                        />
+                            />
                     </Box>
 
                     <Box sx={{ display: "flex", justifyContent: "space-between", py: 1 }}>
@@ -50,8 +51,9 @@ function ArticleForm({ onCloseModal }) {
                             label="First Name"
                             icon={<CertificateSVG />}
                             sx={{ width: "47%" }}
+                            inputProps={{ style: { borderRadius: "none" } }}
                             required
-                        />
+                            />
 
                         <SimpleInput2
                             register={register}
@@ -59,8 +61,9 @@ function ArticleForm({ onCloseModal }) {
                             label="Last Name"
                             icon={<ChatPlusSVG />}
                             sx={{ width: "47%" }}
+                            inputProps={{ style: { borderRadius: "none" } }}
                             required
-                        />
+                            />
                     </Box>
 
                     <Box sx={{ display: "flex", justifyContent: "space-between", py: 1 }}>
@@ -69,9 +72,10 @@ function ArticleForm({ onCloseModal }) {
                             name="email"
                             type="email"
                             label="Email"
+                            inputProps={{ style: { borderRadius: "none" } }}
                             icon={<MessageSVG />}
                             required
-                        />
+                            />
                     </Box>
 
                     <Box sx={{ display: "flex", justifyContent: "space-between", py: 1 }}>
@@ -81,9 +85,10 @@ function ArticleForm({ onCloseModal }) {
                             label="Password"
                             icon={<LockAltSVG />}
                             sx={{ width: "47%" }}
+                            inputProps={{ style: { borderRadius: "none" } }}
                             visibleButton
                             required
-                        />
+                            />
 
                         <SimpleInput2
                             register={register}
@@ -92,8 +97,9 @@ function ArticleForm({ onCloseModal }) {
                             label="Contact Number"
                             icon={<PhoneSVG />}
                             sx={{ width: "47%" }}
+                            inputProps={{ style: { borderRadius: "none" } }}
                             required
-                        />
+                            />
                     </Box>
 
                     <Box sx={{ display: "flex", justifyContent: "end", pt: 4 }}>

@@ -5,16 +5,16 @@ import Table from "../../components/Table/DataTable";
 import AdvanceTable from "../../components/Table/AdvanceTable";
 import React, { useEffect, useState } from "react";
 import SlideBar from "../../components/SlideBar";
-import ArticleForm from "../../components/Dashboard/ArticleForm";
+import ArticleForm from "../../components/Dashboard/Article/ArticleForm";
 import Modal from "../../components/Modal";
-import Articles from "../../components/Dashboard/Articles";
+import Articles from "../../components/Dashboard/Article";
 import UserMenuSVG from "../../components/SVGs/UserMenuSVG";
 import GroupMenuSVG from "../../components/SVGs/GroupMenuSVG";
 import DocumentMenuSVG from "../../components/SVGs/DocumentMenuSVG";
 import SettingMenuSVG from "../../components/SVGs/SettingMenuSVG";
 import { Router, useRouter } from "next/router";
 import Documents from "../../components/Dashboard/Documents";
-import Clients from "../../components/Dashboard/Clients";
+import Clients from "../../components/Dashboard/Client";
 
 const menuItems = [
 	{
@@ -38,7 +38,6 @@ const menuItems = [
 function Dashboard({ }) {
 
 	const router = useRouter();
-	console.log(router)
 
 	const [selectedItem, setSelectedItem] = useState(menuItems[0].name);
 

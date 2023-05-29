@@ -2,7 +2,6 @@ import { Box, Button, IconButton, Typography } from "@mui/material";
 import DataTable from "./DataTable";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import SlideBar from "../SlideBar";
-import ArticleForm from "../Dashboard/ArticleForm2";
 import { useState } from "react";
 
 
@@ -12,25 +11,25 @@ function AdvanceTable({ headers, rows, isAction, toolBar }) {
 
     const newHeaders = [
         // First No. header
-        (<IndexColHead />),
+        (<IndexColHead key={0} />),
 
         // Other header
-        ...headers.map(h => <CommonColHead value={h} />),
+        ...headers.map((h, ind) => <CommonColHead value={h} key={ind+1} />),
 
         // Action header
-        (isAction && (<ActionColHead />))
+        (isAction && (<ActionColHead key={-1} />))
     ]
 
 
     const newRows = rows.map((row, index) => [
         // First index column
-        (<IndexColBody value={index + 1} />),
+        (<IndexColBody value={index + 1} key={index+"-0"} />),
 
         // Other columns
-        ...row.map(r => (<CommonColBody value={r} />)),
+        ...row.map((r, ind) => (<CommonColBody value={r} key={index+"-"+(ind+1)} />)),
 
         //  Action column
-        (isAction && <ActionButton />)
+        (isAction && <ActionButton key={index-+"-1"} />)
     ])
 
     return (
@@ -84,38 +83,38 @@ const commonColBodyStyle = {
 }
 
 
-export const IndexColHead = () => (
-    <Typography variant="body2" sx={indexColHeadStyle}>
+export const IndexColHead = (props) => (
+    <Typography {...props} variant="body2" sx={indexColHeadStyle}>
         No.
     </Typography>
 );
 
-export const CommonColHead = ({ value }) => (
-    <Typography variant="body2" sx={commonColHeadStyle}>
+export const CommonColHead = ({ value, key }) => (
+    <Typography key={key} variant="body2" sx={commonColHeadStyle}>
         {value}
     </Typography>
 );
 
-export const ActionColHead = () => (
-    <Typography variant="body2" sx={actionColHeadStyle}>
+export const ActionColHead = (props) => (
+    <Typography {...props} variant="body2" sx={actionColHeadStyle}>
         Action
     </Typography>
 );
 
-export const IndexColBody = ({ value }) => (
-    <Typography sx={indexColBodyStyle} variant="body2" >
+export const IndexColBody = ({ value, key }) => (
+    <Typography sx={indexColBodyStyle} key={key} variant="body2" >
         {value}
     </Typography>
 );
 
-export const CommonColBody = ({ value }) => (
-    <Typography sx={commonColBodyStyle} variant="body2" >
+export const CommonColBody = ({ value, key }) => (
+    <Typography sx={commonColBodyStyle} key={key} variant="body2" >
         {value}
     </Typography>
 );
 
-export const ActionButton = () => (
-    <Box textAlign={"center"}>
+export const ActionButton = (props) => (
+    <Box {...props} textAlign={"center"}>
         <IconButton sx={{ p: 0 }}>
             <MoreHorizIcon fontSize="medium" sx={{ color: "primary.main" }} />
         </IconButton>

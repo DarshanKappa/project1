@@ -7,7 +7,8 @@ function ThemeContext({ children }) {
         palette: {
             primary: {
                 light: "#E8F0FF",
-                main: "#044766"
+                main: "#044766",
+                "75%": "#044766bf"
             },
             success: {
                 main: "#5DB03E"
