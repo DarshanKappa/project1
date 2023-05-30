@@ -7,6 +7,8 @@ import React, { useState } from "react";
 import SlideBar from "../../SlideBar";
 import ArticleForm from "./ClientForm";
 import Modal from "../../Modal";
+import ClientMenuButton from "./ClientMenu/ClientMenuButton";
+import ClientMenu from "./ClientMenu";
 
 const headers = [
     "Name", "Username", "Email", "Contact", "Company",
@@ -55,19 +57,21 @@ function Clients({ }) {
     const tableProps = {
         headers,
         rows,
-        isAction: true,
-        toolBar
+        toolBar,
+        action: { isAction: true, props: { children: <ClientMenuButton /> } },
     }
 
     return (
         <React.Fragment>
-            <Box sx={{ px: 2, py: 2 }}>
-                <AdvanceTable {...tableProps} />
-            </Box>
+            <ClientMenu>
+                <Box sx={{ px: 2, py: 2 }}>
+                    <AdvanceTable {...tableProps} />
+                </Box>
 
-            <Modal open={modal} onClose={onCloseModal}>
-                <ArticleForm onCloseModal={onCloseModal} />
-            </Modal>
+                <Modal open={modal} onClose={onCloseModal}>
+                    <ArticleForm onCloseModal={onCloseModal} />
+                </Modal>
+            </ClientMenu>
         </React.Fragment>
     );
 }

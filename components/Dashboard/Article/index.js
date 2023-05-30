@@ -3,10 +3,13 @@ import MainLayout from "../../MainLayout";
 import MainPage from "../../MainPage";
 import Table from "../../Table/DataTable";
 import AdvanceTable from "../../Table/AdvanceTable";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SlideBar from "../../SlideBar";
 import ArticleForm from "./ArticleForm";
 import Modal from "../../Modal";
+import { useRouter } from "next/router";
+import ArticleMenu from "./ArticleMenu";
+import ArticleMenuButton from "./ArticleMenu/ArticleMenuButton";
 
 const headers = [
     "Name", "Username", "Email", "Contact", "Company",
@@ -35,6 +38,10 @@ function Articles({ }) {
 
     const [modal, setModal] = useState(false);
 
+    useEffect(() => {
+        // router.push("dashboard", "dashboard/articles", {shallow: true})
+    }, []);
+
     const onCloseModal = () => {
         setModal(false)
     }
@@ -55,19 +62,23 @@ function Articles({ }) {
     const tableProps = {
         headers,
         rows,
-        isAction: true,
-        toolBar
+        toolBar,
+        // In Action Button: here developer can change the child compoment by passing props, But Icon will not change.
+        // And component should be able to accept children.
+        action: { isAction: true, props: { children: <ArticleMenuButton /> } },
     }
 
     return (
         <React.Fragment>
-            <Box sx={{ px: 2, py: 2 }}>
-                <AdvanceTable {...tableProps} />
-            </Box>
+            <ArticleMenu>
+                <Box sx={{ px: 2, py: 2 }}>
+                    <AdvanceTable {...tableProps} />
+                </Box>
 
-            <Modal open={modal} onClose={onCloseModal}>
-                <ArticleForm onCloseModal={onCloseModal} />
-            </Modal>
+                <Modal open={modal} onClose={onCloseModal}>
+                    <ArticleForm onCloseModal={onCloseModal} />
+                </Modal>
+            </ArticleMenu>
         </React.Fragment>
     );
 }

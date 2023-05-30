@@ -2,7 +2,7 @@ import { Box, Grid, Stack } from "@mui/material";
 import MainSideBar from "./MainSideBar";
 
 
-function MainLayout({ children, menuItemList, selectedItem, setItem }) {
+function MainLayout({ children, menuItemList, selectedItem }) {
 	return (
 		<>
 			<Stack sx={{
@@ -15,7 +15,7 @@ function MainLayout({ children, menuItemList, selectedItem, setItem }) {
 					height: "100%",
 					flexShrink: 0
 				}}>
-					<MainSideBar menuItemList={menuItemList} selectedItem={selectedItem} setItem={setItem} />
+					<MainSideBar menuItemList={menuItemList} selectedItem={selectedItem} />
 				</Box>
 
 				<Box sx={{

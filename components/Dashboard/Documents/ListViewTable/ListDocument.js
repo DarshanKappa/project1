@@ -51,7 +51,7 @@ function ListDocument({ headers, rows, widths }) {
                 <Box sx={headRowStyle}>
                     {
                         headers.map((col, ind) => (
-                            <HeadCol col={col} width={widths[ind]} />
+                            <HeadCol key={ind} col={col} width={widths[ind]} />
                         ))
                     }
                 </Box>

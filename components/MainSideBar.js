@@ -5,6 +5,7 @@ import DocumentMenuSVG from "./SVGs/DocumentMenuSVG";
 import SettingMenuSVG from "./SVGs/SettingMenuSVG";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import useShallowRouter from "../Hooks/useShallowRouter";
 
 
 
@@ -36,7 +37,9 @@ const menu = [
     },
 ]
 
-function MainSideBar({ menuItemList, selectedItem, setItem }) {
+function MainSideBar({ menuItemList, selectedItem }) {
+
+    const router = useRouter();
 
     return (
         <Stack sx={{
@@ -67,13 +70,13 @@ function MainSideBar({ menuItemList, selectedItem, setItem }) {
                 <Stack spacing={1}>
                     {
                         menuItemList?.map((m, index) => (
-                            <Link href={"#" + m.name} key={m?.name} onClick={() => setItem(m.name)}
+                            <Box key={m?.name} onClick={() => {selectedItem !== m?.name? router.push(`${m.route}`): null} }
                                 sx={{ ...menuItemStyle, ...(selectedItem === m?.name ? { bgcolor: "primary.light" } : { ":hover": { bgcolor: "#e8f0ff6b" } }) }}>
                                 {m.icon}
                                 <Typography sx={{ pl: 2 }} variant="body1" color="primary.main">
                                     {m.name}
                                 </Typography>
-                            </Link>
+                            </Box>
                         ))
                     }
                 </Stack>
