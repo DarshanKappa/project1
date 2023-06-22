@@ -1,10 +1,8 @@
-import { ListItemButton, ListItemText, Menu, MenuItem } from "@mui/material";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import React, { createContext, useState } from "react";
-import ViewSVG from "../../../SVGs/ViewSVG";
-import RenameSVG from "../../../SVGs/RenameSVG";
-import InfoSVG from "../../../SVGs/InfoSVG";
-import StartSVG from "../../../SVGs/StartSVG";
-import RemoveSVG from "../../../SVGs/RemoveSVG";
 
 
 export const ArticleMenuContext = createContext();

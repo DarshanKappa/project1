@@ -1,8 +1,7 @@
-import { Box, Divider, InputAdornment, InputBase, MenuItem, Select, Stack, SvgIcon, createTheme } from "@mui/material";
-import SelectInput from "../../../Inputs/SelectInput"
-import Option from "../../../Inputs/Option"
-import Person from '@mui/icons-material/Person';
-import SearchIcon from '@mui/icons-material/Search';
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import SvgIcon from "@mui/material/SvgIcon";
+
 
 function SVG({ className }) {
     return (

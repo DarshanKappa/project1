@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ArticleMenuContext } from ".";
-import { IconButton } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 

@@ -1,13 +1,10 @@
 import React from "react";
-import SimpleInput from "../components/Inputs/SimpleInput";
-import { Box, Grid, Stack, Typography } from "@mui/material";
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import CallIcon from '@mui/icons-material/Call';
-import PlaceIcon from '@mui/icons-material/Place';
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import StepperForm from "../components/Forms/StepperForm";
 import PersonalInformation from "../components/SignUp/Forms/PersonalInformation";
 import CompanyInformation from "../components/SignUp/Forms/CompanyInformation";
-import Page from "../components/Page";
 import Link from "next/link";
 
 const stepsName = [

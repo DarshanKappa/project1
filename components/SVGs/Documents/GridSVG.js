@@ -1,6 +1,4 @@
-import { Box } from "@mui/material";
-import Image from "next/image";
-
+import Box from "@mui/material/Box";
 
 function GridSVG({ sx }) {
     return (

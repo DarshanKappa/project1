@@ -1,10 +1,7 @@
-import { Box, Button, Typography } from "@mui/material";
-import MainLayout from "../../MainLayout";
-import MainPage from "../../MainPage";
-import Table from "../../Table/DataTable";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import AdvanceTable from "../../Table/AdvanceTable";
 import React, { useState } from "react";
-import SlideBar from "../../SlideBar";
 import ArticleForm from "./ClientForm";
 import Modal from "../../Modal";
 import ClientMenuButton from "./ClientMenu/ClientMenuButton";

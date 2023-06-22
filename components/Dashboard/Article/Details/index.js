@@ -1,6 +1,7 @@
-import { Box, Stack, Tab, Tabs } from "@mui/material";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import ArticleUserDetails from "./UserDetails";
-import React, { useState } from "react";
+import React from "react";
 import TabContainer, { TabContent, TabItem, TabLabel, TabLabels } from "../../../TabComponents";
 import Clients from "../../Client"
 import Documents from "../../Documents"

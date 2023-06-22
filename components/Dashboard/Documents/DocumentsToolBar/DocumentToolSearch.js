@@ -1,7 +1,5 @@
-import { Box, Divider, InputAdornment, InputBase, MenuItem, Select, Stack, SvgIcon, createTheme } from "@mui/material";
-import SelectInput from "../../../Inputs/SelectInput"
-import Option from "../../../Inputs/Option"
-import Person from '@mui/icons-material/Person';
+import Box from "@mui/material/Box";
+import InputBase from "@mui/material/InputBase";
 import SearchIcon from '@mui/icons-material/Search';
 
 

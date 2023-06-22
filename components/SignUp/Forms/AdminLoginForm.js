@@ -1,15 +1,11 @@
-import { Box, Button, Typography } from "@mui/material";
+import { useContext } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import SimpleInput from "../../Inputs/SimpleInput";
 import PasswordInput from "../../Inputs/PasswordInput";
-import SelectInput from "../../Inputs/SelectInput";
-import { useContext } from "react";
 import { FormStepperContext } from "../../Forms/StepperForm";
-import UserDuotoneSVG from "../../SVGs/UserDuotone";
-import UserDuotone2SVG from "../../SVGs/UserDuotone2SVG";
 import MessageSVG from "../../SVGs/MessageSVG";
-import GroupAddUserSVG from "../../SVGs/GroupAddUserSVG";
 import LockSVG from "../../SVGs/LockSVG";
-import Option from "../../Inputs/Option";
 
 const options = [
 	"Chartered Accountant",

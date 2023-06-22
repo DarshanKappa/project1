@@ -1,12 +1,13 @@
-import { Box, Button, Card, CardContent, CardHeader, Stack, Typography } from "@mui/material";
-import UserAddSVG from "../../../SVGs/Article/UserAddSVG";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import DownloadSVG from "../../../SVGs/DownloadSVG";
 
 const documentCardStyle = {
     width: 260,
     height: (285 + 12 + 12),
-    // px: 4,
-    // py: 4,
     mx: 3,
     mb: 6,
     bgcolor: "primary.light",

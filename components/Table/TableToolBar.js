@@ -1,6 +1,7 @@
-import { Box, InputAdornment, InputBase, Stack, TextField, Button } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 import React from "react";
+import Box from "@mui/material/Box";
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from '@mui/icons-material/Search';
 
 
 function TableToolBar({ searchBar, buttons }) {
