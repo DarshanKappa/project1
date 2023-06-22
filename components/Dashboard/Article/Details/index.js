@@ -1,7 +1,7 @@
 import { Box, Stack, Tab, Tabs } from "@mui/material";
 import ArticleUserDetails from "./UserDetails";
 import React, { useState } from "react";
-import TabContainer, { TabContent, TabLabel, TabLabels } from "../../../TabComponents";
+import TabContainer, { TabContent, TabItem, TabLabel, TabLabels } from "../../../TabComponents";
 import Clients from "../../Client"
 import Documents from "../../Documents"
 import ActivityLogs, { Log } from "./ActivityLogs";
@@ -27,7 +27,7 @@ const logs = [
 ]
 
 function ArticleDetails({ rowData }) {
-	const [tab, settab] = useState(0);
+
 	return (
 		<Stack sx={{ height: "100%" }}>
 			<ArticleUserDetails rowData={rowData} />
@@ -54,11 +54,10 @@ function ArticleDetails({ rowData }) {
 						<TabItem>
 							<ActivityLogs sx={{ pt: 4, pl: 8 }}>
 								{
-									logs?.map?.(child=>(
+									logs?.map?.(child => (
 										<Log primary={child.primary} secondary={child.secondary} />
 									))
 								}
-
 							</ActivityLogs>
 						</TabItem>
 					</TabContent>
@@ -72,21 +71,3 @@ function ArticleDetails({ rowData }) {
 }
 
 export default ArticleDetails;
-
-function TabItem({ children, tab, index }) {
-	return (
-		// tab === index ? children : <React.Fragment />
-		children
-	);
-}
-
-// function TabContainer({ children, value }) {
-//   return (
-//     !Array.isArray(children) ?
-//       children
-//       :
-//       children?.map((tab, index) => (
-//         value === index ? tab : <React.Fragment />
-//       ))
-//   );
-// }

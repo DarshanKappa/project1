@@ -13,7 +13,7 @@ function TabContainer({ children }) {
                     <Tabs value={tab} onChange={(_, v) => setTab(v)}>
                         {
                             children?.[0]?.props?.children?.map((tab, index) => (
-                                <Tab index={index} label={tab.props.children} />
+                                <Tab sx={{textTransform: "none", fontWeight: 600, fontSize: 16, color: "primary.75%", "&.Mui-selected": {color: "primary.main", }}} index={index} label={tab.props.children} />
                             ))
                         }
                     </Tabs>
@@ -34,9 +34,9 @@ function TabContainer({ children }) {
         return (
             <>
                 <Stack sx={{ height: "100%" }}>
-                    <Tabs value={0} onChange={(_, v) => setTab(v)}>
+                    <Tabs sx={{}} value={0} onChange={(_, v) => setTab(v)}>
                         {
-                            <Tab index={0} label={children?.[0]?.props?.children?.props?.children} />
+                            <Tab sx={{textTransform: "none"}} index={0} label={children?.[0]?.props?.children?.props?.children} />
                         }
                     </Tabs>
                     <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
