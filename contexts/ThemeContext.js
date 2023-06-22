@@ -10,6 +10,9 @@ function ThemeContext({ children }) {
                 main: "#044766",
                 "75%": "#044766bf"
             },
+            secondary: {
+                main: "#2E6ADB"
+            },
             success: {
                 main: "#5DB03E"
             },

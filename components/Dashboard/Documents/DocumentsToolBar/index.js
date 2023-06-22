@@ -74,7 +74,7 @@ function DocumentsToolBar({ }) {
                             <ViewSVG sx={{ width: 40, height: 40 }} />
                         </IconButton>
 
-                        <Button variant="contained" sx={{ textTransform: "none", borderRadius: 0, bgcolor: "#2E6ADB" }}>
+                        <Button variant="contained" sx={{ textTransform: "none", borderRadius: 0, bgcolor: "secondary.main" }}>
                             <FileUploadOutlinedIcon />
                             <Typography variant="body1" sx={{ px: 1 }} color="white">
                                 Upload
