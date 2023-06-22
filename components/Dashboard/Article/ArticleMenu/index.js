@@ -9,8 +9,9 @@ import RemoveSVG from "../../../SVGs/RemoveSVG";
 
 export const ArticleMenuContext = createContext();
 
-function ArticleMenu({ children }) {
+function ArticleMenu({ children, menuItems, onMenuItemClick }) {
 
+    const [rowData, setRowData] = useState({});
     const [anchorEl, setAnchorEl] = useState(null)
 
     const open = Boolean(anchorEl)
@@ -18,7 +19,6 @@ function ArticleMenu({ children }) {
     const handleClose = () => {
         setAnchorEl(null)
     }
-
 
     return (
         <React.Fragment>
@@ -28,6 +28,7 @@ function ArticleMenu({ children }) {
                 setAnchorEl: setAnchorEl,
                 menuId: "Article-menu",
                 buttonId: "Article-menu-button",
+                setRowData: setRowData,
             }}>
                 {children}
             </ArticleMenuContext.Provider>
@@ -46,18 +47,16 @@ function ArticleMenu({ children }) {
                     },
                 }}
             >
-                <MenuItem sx={{ p: 0 }}>
-                    <ListItemButton sx={{ pl: 3, pr: 4 }}>
-                        <RenameSVG sx={{ mr: 2, width: 15, height: 15 }} />
-                        <ListItemText sx={{ color: "primary.main" }} primary="Edit" />
-                    </ListItemButton>
-                </MenuItem>
-                <MenuItem sx={{ p: 0 }}>
-                    <ListItemButton sx={{ pl: 3, pr: 4 }}>
-                        <RemoveSVG sx={{ mr: 2, width: 15, height: 15 }} />
-                        <ListItemText sx={{ color: "primary.main" }} primary="Delete" />
-                    </ListItemButton>
-                </MenuItem>
+                {
+                    menuItems?.map?.((item, index) => (
+                        <MenuItem key={item?.value} sx={{ p: 0 }} onClick={() => { handleClose(); onMenuItemClick(rowData, item.value) }}>
+                            <ListItemButton sx={{ pl: 3, pr: 4 }}>
+                                {React.cloneElement(item?.icon, { sx: { mr: 2, width: 15, height: 15 } })}
+                                <ListItemText sx={{ color: "primary.main" }} primary={item?.name} />
+                            </ListItemButton>
+                        </MenuItem>
+                    ))
+                }
             </Menu>
         </React.Fragment>
     );
