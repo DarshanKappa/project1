@@ -1,13 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
-import MainLayout from "../../MainLayout";
-import MainPage from "../../MainPage";
-import Table from "../../Table/DataTable";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import AdvanceTable from "../../Table/AdvanceTable";
-import React, { useContext, useEffect, useState } from "react";
-import SlideBar from "../../SlideBar";
+import React, { useEffect, useState } from "react";
 import ArticleForm from "./ArticleForm";
 import Modal from "../../Modal";
-import { useRouter } from "next/router";
 import ArticleMenu from "./ArticleMenu";
 import ArticleMenuButton from "./ArticleMenu/ArticleMenuButton";
 import RenameSVG from "../../SVGs/RenameSVG";

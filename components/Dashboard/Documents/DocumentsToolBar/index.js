@@ -1,11 +1,15 @@
-import { Box, Button, Divider, Stack, Typography, IconButton } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import DocumentToolFilter from "./DocumentToolFilter";
 import DocumentToolSearch from "./DocumentToolSearch";
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import ViewSVG from "../../../SVGs/Documents/ViewSVG";
 import { useContext } from "react";
-import { DocumentViewContext } from "..";
-import DocumentToolMenu, { DocumentMenuContext } from "./DocumentToolMenu";
+import { DocumentMenuContext } from "./DocumentToolMenu";
 
 
 const filterOptions = [

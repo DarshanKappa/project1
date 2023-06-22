@@ -1,8 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
+import { useContext, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import SimpleInput from "../../Inputs/SimpleInput";
 import PasswordInput from "../../Inputs/PasswordInput";
 import SelectInput from "../../Inputs/SelectInput";
-import { useContext, useState } from "react";
 import { FormStepperContext } from "../../Forms/StepperForm";
 import UserDuotoneSVG from "../../SVGs/UserDuotone";
 import UserDuotone2SVG from "../../SVGs/UserDuotone2SVG";

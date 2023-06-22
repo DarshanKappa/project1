@@ -1,8 +1,9 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import React from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 import DataTable from "./DataTable";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import SlideBar from "../SlideBar";
-import React, { useState } from "react";
 
 
 

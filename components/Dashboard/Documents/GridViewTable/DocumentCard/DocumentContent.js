@@ -1,5 +1,6 @@
-import { CardContent, Typography } from "@mui/material";
 import React from "react";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
 
 export default function DocumentContent({ fileIcon, fileName }) {

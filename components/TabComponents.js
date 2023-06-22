@@ -1,5 +1,8 @@
-import { Box, Stack, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 
 
 function TabContainer({ children }) {

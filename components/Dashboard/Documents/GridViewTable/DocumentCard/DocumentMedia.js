@@ -1,4 +1,5 @@
-import { Box, CardMedia } from "@mui/material";
+import Box from "@mui/material/Box";
+import CardMedia from "@mui/material/CardMedia";
 import Image from "next/image";
 
 export default function DocumentMedia({ src }){

@@ -1,4 +1,7 @@
-import { Box, Divider, IconButton, InputBase } from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import InputBase from "@mui/material/InputBase";
 import LanguageIcon from '@mui/icons-material/Language';
 
 

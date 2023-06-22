@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SelectContext } from "./SelectInput";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 
 function Option({ children, value: optionValue }) {

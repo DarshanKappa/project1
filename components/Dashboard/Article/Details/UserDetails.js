@@ -1,6 +1,8 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
-// import CallSVG from "../../../SVGs/CallSVG";
 import EditSVG from "../../../SVGs/Article/Details/EditSVG";
 import CallSVG from "../../../SVGs/Article/Details/CallSVG";
 import EmailSVG from "../../../SVGs/Article/Details/EmailSVG";

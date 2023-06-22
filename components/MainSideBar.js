@@ -1,11 +1,12 @@
-import { Avatar, Box, Link, Stack, Typography } from "@mui/material";
+import { useRouter } from "next/router";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import UserMenuSVG from "./SVGs/UserMenuSVG";
 import GroupMenuSVG from "./SVGs/GroupMenuSVG";
 import DocumentMenuSVG from "./SVGs/DocumentMenuSVG";
 import SettingMenuSVG from "./SVGs/SettingMenuSVG";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import useShallowRouter from "../Hooks/useShallowRouter";
 
 
 
