@@ -1,16 +1,16 @@
 import { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SimpleInput from "../../Inputs/SimpleInput";
+import MenuItem from "@mui/material/MenuItem";
 import PasswordInput from "../../Inputs/PasswordInput";
-import SelectInput from "../../Inputs/SelectInput";
+import SimpleInput from "../../Inputs/SimpleInput";
 import { FormStepperContext } from "../../Forms/StepperForm";
 import UserDuotoneSVG from "../../SVGs/UserDuotone";
 import UserDuotone2SVG from "../../SVGs/UserDuotone2SVG";
 import MessageSVG from "../../SVGs/MessageSVG";
 import GroupAddUserSVG from "../../SVGs/GroupAddUserSVG";
 import LockSVG from "../../SVGs/LockSVG";
-import Option from "../../Inputs/Option";
+import SelectInput2 from "../../Inputs/SelectInput2";
 
 const options = [
 	"Chartered Accountant",
@@ -48,13 +48,9 @@ function PersonalInformation({ sx }) {
 		})
 	}
 
-	console.log(watch())
-
-	const [count, setCount] = useState(0)
-
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)} style={{width: "100%"}}>
+			<form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
 				<Box sx={{
 					width: "100%",
 					pr: 4,
@@ -65,7 +61,6 @@ function PersonalInformation({ sx }) {
 					...sx
 				}}
 				>
-					<Button variant="contained" onClick={()=>setCount(count+1)}>{count}</Button>
 					<SimpleInput
 						register={register}
 						label="Name"
@@ -99,24 +94,20 @@ function PersonalInformation({ sx }) {
 						sx={{ my: 1 }}
 						required
 					/>
-					<SelectInput
+					<SelectInput2
 						register={register}
-						label="Profession"
 						name="personal.profession"
+						label={"Profession"}
 						icon={<GroupAddUserSVG />}
-						sx={{ my: 1 }}
 						required
-						// control={control}
-						setValue={setValue}
-						watch={watch}
-
+						sx={{ my: 1 }}
 					>
 						{
-							options?.map(opt => (
-								<Option key={opt} value={opt}>{opt}</Option>
+							options?.map(op=>(
+								<MenuItem value={op}>{op}</MenuItem>
 							))
 						}
-					</SelectInput>
+					</SelectInput2>
 				</Box>
 
 				<Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
