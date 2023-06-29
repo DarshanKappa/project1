@@ -1,6 +1,7 @@
-import { Divider, Stack, Typography } from "@mui/material";
-import SimpleInput from "./SimpleInput";
 import React, { useEffect, useRef, useState } from "react";
+import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
+import SimpleInput from "./SimpleInput";
 import FocusableComponent from "./FocusableComponent";
 
 export const SelectContext = React.createContext();

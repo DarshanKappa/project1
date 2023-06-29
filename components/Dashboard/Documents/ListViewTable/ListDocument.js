@@ -1,4 +1,7 @@
-import { Box, Divider, IconButton, Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography'
 import React, { useState } from "react";
 import CheckedBox from "../../../SVGs/CheckedBox";

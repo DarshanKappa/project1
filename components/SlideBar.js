@@ -1,10 +1,7 @@
-import { Avatar, Box, Button, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, SwipeableDrawer } from "@mui/material";
-import { useState } from "react";
+import  SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 
 function SlideBar({ children, open, setOpen }) {
-
-    // const [state, setState] = useState(false);
 
     const toggleDrawer = (value) => (event) => {
         if (

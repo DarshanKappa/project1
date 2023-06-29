@@ -1,8 +1,9 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import React from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 import DataTable from "./DataTable";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import SlideBar from "../SlideBar";
-import React, { useState } from "react";
 
 
 
@@ -14,7 +15,7 @@ function AdvanceTable({ headers, rows, action, toolBar }) {
         (<IndexColHead key={0} />),
 
         // Other header
-        ...headers.map((h, ind) => <CommonColHead value={h} key={ind + 1} />),
+        ...headers.map((h, ind) => <CommonColHead value={h.name} key={ind + 1} />),
 
         // Action header
         (action.isAction && (<ActionColHead key={-1} />))
@@ -26,10 +27,10 @@ function AdvanceTable({ headers, rows, action, toolBar }) {
         (<IndexColBody value={index + 1} key={index + "-0"} />),
 
         // Other columns
-        ...row.map((r, ind) => (<CommonColBody value={r} key={index + "-" + (ind + 1)} />)),
+        ...headers.map((h, ind) => (<CommonColBody value={row?.[h.key]} key={index + "-" + (ind + 1)} />)),
 
         //  Action column
-        (action.isAction && <ActionButton key={index - +"-1"} {...action.props} />)
+        (action.isAction && <ActionButton rowData={row} key={index - +"-1"} {...action.props} />)
     ])
 
     return (
@@ -120,6 +121,7 @@ export const ActionButton = (props) => (
     <Box {...props} textAlign={"center"}>
         {props.children ?
             React.cloneElement(props.children, {
+                rowData: props?.rowData,
                 children: (
                     <IconButton sx={{ p: 0 }}>
                         <MoreHorizIcon fontSize="medium" sx={{ color: "primary.main" }} />

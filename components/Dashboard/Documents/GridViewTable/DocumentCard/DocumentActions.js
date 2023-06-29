@@ -1,4 +1,8 @@
-import { Avatar, AvatarGroup, Box, CardActions, Typography } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import AvatarGroup from "@mui/material/AvatarGroup";
+import Box from "@mui/material/Box";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
 import DocumentMenuButton from "../../DocumentMenu/DocumentMenuButton";
 
 

@@ -1,7 +1,9 @@
-import { Box, Button, Divider, Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import SimpleInput2 from "../../Inputs/SimpleInput2";
-import UserDuotoneSVG from "../../SVGs/UserDuotone";
-import PersonIcon from '@mui/icons-material/Person';
 import PasswordInput2 from "../../Inputs/PasswordInput2";
 import { useForm } from "react-hook-form";
 import UserAddSVG from "../../SVGs/Article/UserAddSVG";

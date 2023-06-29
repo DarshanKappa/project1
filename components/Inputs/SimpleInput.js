@@ -1,4 +1,9 @@
-import { Box, Divider, Input, InputAdornment, InputBase, Stack, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import InputAdornment from "@mui/material/InputAdornment";
+import InputBase from "@mui/material/InputBase";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
 
 function SimpleInput({ register = () => { }, label, name, icon, sx, inputProps, ...restProps }) {
