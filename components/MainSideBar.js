@@ -3,10 +3,10 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import UserMenuSVG from "./SVGs/UserMenuSVG";
-import GroupMenuSVG from "./SVGs/GroupMenuSVG";
-import DocumentMenuSVG from "./SVGs/DocumentMenuSVG";
-import SettingMenuSVG from "./SVGs/SettingMenuSVG";
+import UserMenuSVG from "@svgs/UserMenuSVG";
+import GroupMenuSVG from "@svgs/GroupMenuSVG";
+import DocumentMenuSVG from "@svgs/DocumentMenuSVG";
+import SettingMenuSVG from "@svgs/SettingMenuSVG";
 
 
 

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SimpleInput from "../../Inputs/SimpleInput";
-import PasswordInput from "../../Inputs/PasswordInput";
-import { FormStepperContext } from "../../Forms/StepperForm";
-import MessageSVG from "../../SVGs/MessageSVG";
-import LockSVG from "../../SVGs/LockSVG";
+import SimpleInput from "@formFields/SimpleInput";
+import PasswordInput from "@formFields/PasswordInput";
+import { FormStepperContext } from "@components/Forms/StepperForm";
+import MessageSVG from "@svgs/MessageSVG";
+import LockSVG from "@svgs/LockSVG";
 
 const options = [
 	"Chartered Accountant",

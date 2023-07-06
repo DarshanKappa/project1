@@ -2,15 +2,15 @@ import { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import PasswordInput from "../../Inputs/PasswordInput";
-import SimpleInput from "../../Inputs/SimpleInput";
-import { FormStepperContext } from "../../Forms/StepperForm";
-import UserDuotoneSVG from "../../SVGs/UserDuotone";
-import UserDuotone2SVG from "../../SVGs/UserDuotone2SVG";
-import MessageSVG from "../../SVGs/MessageSVG";
-import GroupAddUserSVG from "../../SVGs/GroupAddUserSVG";
-import LockSVG from "../../SVGs/LockSVG";
-import SelectInput2 from "../../Inputs/SelectInput2";
+import PasswordInput from "@formFields/PasswordInput";
+import SimpleInput from "@formFields/SimpleInput";
+import SelectInput2 from "@formFields/SelectInput2";
+import { FormStepperContext } from "@formFields/StepperForm";
+import UserDuotoneSVG from "@svgs/UserDuotone";
+import UserDuotone2SVG from "@svgs/UserDuotone2SVG";
+import MessageSVG from "@svgs/MessageSVG";
+import GroupAddUserSVG from "@svgs/GroupAddUserSVG";
+import LockSVG from "@svgs/LockSVG";
 
 const options = [
 	"Chartered Accountant",

@@ -1,11 +1,11 @@
 import React from "react";
+import Link from "next/link";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import StepperForm from "../components/Forms/StepperForm";
-import Link from "next/link";
-import AdminLoginForm from "../components/SignUp/Forms/AdminLoginForm";
-import UserLoginForm from "../components/SignUp/Forms/UserLoginForm";
+import StepperForm from "@components/Forms/StepperForm";
+import AdminLoginForm from "@components/SignUp/Forms/AdminLoginForm";
+import UserLoginForm from "@components/SignUp/Forms/UserLoginForm";
 
 const stepsName = [
 	"Admin",

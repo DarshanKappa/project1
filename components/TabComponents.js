@@ -11,48 +11,44 @@ function TabContainer({ children }) {
 
     if (Array.isArray(children?.[0]?.props?.children)) {
         return (
-            <>
-                <Stack sx={{ height: "100%" }}>
-                    <Tabs value={tab} onChange={(_, v) => setTab(v)}>
-                        {
-                            children?.[0]?.props?.children?.map((tab, index) => (
-                                <Tab sx={{textTransform: "none", fontWeight: 600, fontSize: 16, color: "primary.75%", "&.Mui-selected": {color: "primary.main", }}} index={index} label={tab.props.children} />
+            <Stack sx={{ height: "100%" }}>
+                <Tabs value={tab} onChange={(_, v) => setTab(v)}>
+                    {
+                        children?.[0]?.props?.children?.map((tab, index) => (
+                            <Tab sx={{ textTransform: "none", fontWeight: 600, fontSize: 16, color: "primary.75%", "&.Mui-selected": { color: "primary.main", } }} index={index} label={tab.props.children} />
+                        ))
+                    }
+                </Tabs>
+                <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
+                    {
+                        Array.isArray(children?.[1]?.props?.children) ? (
+                            children?.[1]?.props?.children?.map((cont, index) => (
+                                tab === index ? cont : <React.Fragment />
                             ))
-                        }
-                    </Tabs>
-                    <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
-                        {
-                            Array.isArray(children?.[1]?.props?.children) ? (
-                                children?.[1]?.props?.children?.map((cont, index) => (
-                                    tab === index ? cont : <React.Fragment />
-                                ))
-                            ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
-                        }
-                    </Box>
-                </Stack>
-            </>
+                        ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
+                    }
+                </Box>
+            </Stack>
         )
 
     } else {
         return (
-            <>
-                <Stack sx={{ height: "100%" }}>
-                    <Tabs sx={{}} value={0} onChange={(_, v) => setTab(v)}>
-                        {
-                            <Tab sx={{textTransform: "none"}} index={0} label={children?.[0]?.props?.children?.props?.children} />
-                        }
-                    </Tabs>
-                    <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
-                        {
-                            Array.isArray(children?.[1]?.props?.children) ? (
-                                children?.[1]?.props?.children?.map((cont, index) => (
-                                    0 === index ? cont : <React.Fragment />
-                                ))
-                            ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
-                        }
-                    </Box>
-                </Stack>
-            </>
+            <Stack sx={{ height: "100%" }}>
+                <Tabs sx={{}} value={0} onChange={(_, v) => setTab(v)}>
+                    {
+                        <Tab sx={{ textTransform: "none" }} index={0} label={children?.[0]?.props?.children?.props?.children} />
+                    }
+                </Tabs>
+                <Box sx={{ flexGrow: 1, overflowY: "auto" }}>
+                    {
+                        Array.isArray(children?.[1]?.props?.children) ? (
+                            children?.[1]?.props?.children?.map((cont, index) => (
+                                0 === index ? cont : <React.Fragment />
+                            ))
+                        ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
+                    }
+                </Box>
+            </Stack>
         )
 
     }

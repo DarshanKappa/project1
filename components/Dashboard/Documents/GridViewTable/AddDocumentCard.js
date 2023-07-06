@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import DownloadSVG from "../../../SVGs/DownloadSVG";
+import DownloadSVG from "@svgs/DownloadSVG";
 
 const documentCardStyle = {
     width: 260,
@@ -16,29 +16,27 @@ const documentCardStyle = {
 
 function AddDocumentCard({ }) {
     return (
-        <>
-            <Card sx={documentCardStyle}>
-                <Stack sx={{height: "100%"}}>
-                    <Typography sx={{textAlign: "center", mt: 3}} variant="h7" color="primary.main">
-                        Upload a new document
+        <Card sx={documentCardStyle}>
+            <Stack sx={{ height: "100%" }}>
+                <Typography sx={{ textAlign: "center", mt: 3 }} variant="h7" color="primary.main">
+                    Upload a new document
+                </Typography>
+
+                <Box sx={{ border: "1px dashed", bgcolor: "#E5E5E5", borderColor: "primary.main", m: 3, pt: 2, pb: 4, height: "100%", display: "flex", placeItems: "center", flexDirection: "column" }}>
+                    <Typography sx={{ textAlign: "center" }} variant="caption" color="primary.main">
+                        Drop your files here
                     </Typography>
 
-                    <Box sx={{border: "1px dashed", bgcolor: "#E5E5E5", borderColor: "primary.main", m: 3, pt: 2, pb: 4, height: "100%", display: "flex", placeItems: "center", flexDirection: "column"}}>
-                        <Typography sx={{textAlign: "center"}} variant="caption" color="primary.main">
-                            Drop your files here
-                        </Typography>
+                    <DownloadSVG sx={{ fill: "red" }} />
 
-                        <DownloadSVG sx={{fill: "red"}} />
+                    <Typography variant="caption" color="primary.main">Or</Typography>
 
-                        <Typography variant="caption" color="primary.main">Or</Typography>
-
-                        <Button size="small" variant="outlined" sx={{borderRadius: 0, textTransform: "none"}}>
-                            Browse Files
-                        </Button>
-                    </Box>
-                </Stack>
-            </Card>
-        </>
+                    <Button size="small" variant="outlined" sx={{ borderRadius: 0, textTransform: "none" }}>
+                        Browse Files
+                    </Button>
+                </Box>
+            </Stack>
+        </Card>
     );
 }
 

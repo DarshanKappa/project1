@@ -3,10 +3,10 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import EditSVG from "../../../SVGs/Article/Details/EditSVG";
-import CallSVG from "../../../SVGs/Article/Details/CallSVG";
-import EmailSVG from "../../../SVGs/Article/Details/EmailSVG";
-import PersonSVG from "../../../SVGs/Article/Details/PersonSVG";
+import EditSVG from "@svgs/Article/Details/EditSVG";
+import CallSVG from "@svgs/Article/Details/CallSVG";
+import EmailSVG from "@svgs/Article/Details/EmailSVG";
+import PersonSVG from "@svgs/Article/Details/PersonSVG";
 
 
 function ArticleUserDetails({ rowData }) {

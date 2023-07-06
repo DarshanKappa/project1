@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import ArticleUserDetails from "./UserDetails";
 import React from "react";
-import TabContainer, { TabContent, TabItem, TabLabel, TabLabels } from "../../../TabComponents";
+import TabContainer, { TabContent, TabItem, TabLabel, TabLabels } from "@components/TabComponents";
 import Clients from "../../Client"
 import Documents from "../../Documents"
 import ActivityLogs, { Log } from "./ActivityLogs";

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["components/*"],
+            "@hooks/*": ["Hooks/*"],
+            "@formFields/*": ["components/Inputs/*"],
+            "@svgs/*": ["components/SVGs/*"],
+        }
+    }
+}

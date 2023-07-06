@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import AdvanceTable from "../../Table/AdvanceTable";
+import AdvanceTable from "@components/Table/AdvanceTable";
 import React, { useEffect, useState } from "react";
 import ArticleForm from "./ArticleForm";
-import Modal from "../../Modal";
+import Modal from "@components/Modal";
 import ArticleMenu from "./ArticleMenu";
 import ArticleMenuButton from "./ArticleMenu/ArticleMenuButton";
-import RenameSVG from "../../SVGs/RenameSVG";
-import RemoveSVG from "../../SVGs/RemoveSVG";
+import RenameSVG from "@svgs/RenameSVG";
+import RemoveSVG from "@svgs/RemoveSVG";
 import ArticleDetails from "./Details";
 
 const headers = [
@@ -151,14 +151,10 @@ const menuItems = [
   },
 ];
 
-function Articles({}) {
+function Articles({ }) {
   const [modal, setModal] = useState(false);
   const [menuitem, setMenuitem] = useState(null);
   const [rowData, setRowData] = useState({});
-
-  useEffect(() => {
-    // router.push("dashboard", "dashboard/articles", {shallow: true})
-  }, []);
 
   const onCloseModal = () => {
     setModal(false);
@@ -204,25 +200,23 @@ function Articles({}) {
   };
 
   return (
-    <React.Fragment>
-      <ArticleMenu onMenuItemClick={onMenuItemClick} menuItems={menuItems}>
-        {menuitem ? (
-          <>
-            {menuitem === "view" && <ArticleDetails rowData={rowData} />}
-            {menuitem === "edit" && <>Edit</>}
-            {menuitem === "delete" && <>Delete</>}
-          </>
-        ) : (
-          <Box sx={{ px: 2, py: 2 }}>
-            <AdvanceTable {...tableProps} />
-          </Box>
-        )}
+    <ArticleMenu onMenuItemClick={onMenuItemClick} menuItems={menuItems}>
+      {menuitem ? (
+        <>
+          {menuitem === "view" && <ArticleDetails rowData={rowData} />}
+          {menuitem === "edit" && <>Edit</>}
+          {menuitem === "delete" && <>Delete</>}
+        </>
+      ) : (
+        <Box sx={{ px: 2, py: 2 }}>
+          <AdvanceTable {...tableProps} />
+        </Box>
+      )}
 
-        <Modal open={modal} onClose={onCloseModal}>
-          <ArticleForm onCloseModal={onCloseModal} />
-        </Modal>
-      </ArticleMenu>
-    </React.Fragment>
+      <Modal open={modal} onClose={onCloseModal}>
+        <ArticleForm onCloseModal={onCloseModal} />
+      </Modal>
+    </ArticleMenu>
   );
 }
 

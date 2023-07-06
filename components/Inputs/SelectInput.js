@@ -4,8 +4,8 @@ import Stack from "@mui/material/Stack";
 import SimpleInput from "./SimpleInput";
 import FocusableComponent from "./FocusableComponent";
 
-export const SelectContext = React.createContext();
 
+export const SelectContext = React.createContext();
 
 function SelectInput({ children, register = () => { }, label = "", name = "", icon, sx, watch, setValue, ...restProps }) {
 
@@ -21,61 +21,59 @@ function SelectInput({ children, register = () => { }, label = "", name = "", ic
     const onSelectClick = () => {
         setOptionsVisible(!optionsVisible)
     }
-    
-    const preSetValue = (value)=>{
+
+    const preSetValue = (value) => {
         setValue(name, value)
         setOptionsVisible(false)
     }
 
     return (
-        <>
-            <SelectContext.Provider value={{
-                value: value,
-                setValue: preSetValue
-            }}>
-                <Stack sx={{ width: "100%", ...sx }}>
+        <SelectContext.Provider value={{
+            value: value,
+            setValue: preSetValue
+        }}>
+            <Stack sx={{ width: "100%", ...sx }}>
 
-                    <SimpleInput
-                        label={label}
-                        name={name}
-                        icon={icon}
-                        value={value}
-                        onClick={onSelectClick}
-                        readOnly
-                        inputProps={{
-                            style: {
-                                cursor: "pointer"
-                            }
-                        }}
-                        {...restProps}
-                    />
-
-                    <Stack
-                        sx={{
-                            width: "90%",
-                            alignSelf: "end",
-                            mt: 2,
-                            bgcolor: "background.project.paper.main",
-                            borderRadius: "4px"
-                        }}
-                    >
-                        {optionsVisible &&
-                            (<>
-                                {children?.map?.((component, index) => (
-                                    <>
-                                        {component}
-                                        {index < children?.length - 1 && (
-                                            <Divider />
-                                        )}
-                                    </>
-                                ))}
-                                <FocusableComponent ref={ref} />
-                            </>)
+                <SimpleInput
+                    label={label}
+                    name={name}
+                    icon={icon}
+                    value={value}
+                    onClick={onSelectClick}
+                    readOnly
+                    inputProps={{
+                        style: {
+                            cursor: "pointer"
                         }
-                    </Stack>
+                    }}
+                    {...restProps}
+                />
+
+                <Stack
+                    sx={{
+                        width: "90%",
+                        alignSelf: "end",
+                        mt: 2,
+                        bgcolor: "background.project.paper.main",
+                        borderRadius: "4px"
+                    }}
+                >
+                    {optionsVisible &&
+                        (<>
+                            {children?.map?.((component, index) => (
+                                <>
+                                    {component}
+                                    {index < children?.length - 1 && (
+                                        <Divider />
+                                    )}
+                                </>
+                            ))}
+                            <FocusableComponent ref={ref} />
+                        </>)
+                    }
                 </Stack>
-            </SelectContext.Provider>
-        </>
+            </Stack>
+        </SelectContext.Provider>
     );
 }
 
