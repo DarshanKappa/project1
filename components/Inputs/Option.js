@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { SelectContext } from "./SelectInput";
 import Typography from "@mui/material/Typography";
 
@@ -8,7 +8,7 @@ function Option({ children, value: optionValue }) {
     const { value, setValue } = useContext(SelectContext);
 
     return (
-        <>
+        <React.Fragment>
             <Typography
                 sx={{
                     borderRadius: "4px",
@@ -27,7 +27,7 @@ function Option({ children, value: optionValue }) {
             >
                 {children}
             </Typography>
-        </>
+        </React.Fragment>
     );
 }
 

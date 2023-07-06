@@ -1,10 +1,10 @@
+import React, { createContext, useState } from "react";
 import Box from "@mui/material/Box";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import React, { createContext, useState } from "react";
-import CheckRightSVG from "../../../SVGs/Documents/CheckRightSVG";
+import CheckRightSVG from "@svgs/Documents/CheckRightSVG";
 
 
 export const DocumentMenuContext = createContext();

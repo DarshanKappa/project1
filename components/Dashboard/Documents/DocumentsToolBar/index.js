@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -7,8 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import DocumentToolFilter from "./DocumentToolFilter";
 import DocumentToolSearch from "./DocumentToolSearch";
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import ViewSVG from "../../../SVGs/Documents/ViewSVG";
-import { useContext } from "react";
+import ViewSVG from "@svgs/Documents/ViewSVG";
 import { DocumentMenuContext } from "./DocumentToolMenu";
 
 

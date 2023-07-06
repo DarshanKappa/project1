@@ -15,21 +15,19 @@ function SVG({ className }) {
 
 function DocumentToolFilter({ label, options }) {
     return (
-        <>
-            <Select
-                size="small"
-                variant="outlined"
-                sx={{ width: "100%", mr: 1, borderRadius: 0, color: "primary.75%", bgcolor: "#0547660d", '.MuiOutlinedInput-notchedOutline': { border: "none", } }}
-                IconComponent={SVG}
-                defaultValue={"null"}
-            // onChange={(e) => console.log(e)}
-            >
-                <MenuItem value={"null"} sx={{ color: "gray" }}>{label}</MenuItem>
-                {options?.map?.(obj => (
-                    <MenuItem key={obj?.option} value={obj?.option}>{obj?.value}</MenuItem>
-                ))}
-            </Select>
-        </>
+        <Select
+            size="small"
+            variant="outlined"
+            sx={{ width: "100%", mr: 1, borderRadius: 0, color: "primary.75%", bgcolor: "#0547660d", '.MuiOutlinedInput-notchedOutline': { border: "none", } }}
+            IconComponent={SVG}
+            defaultValue={"null"}
+        // onChange={(e) => console.log(e)}
+        >
+            <MenuItem value={"null"} sx={{ color: "gray" }}>{label}</MenuItem>
+            {options?.map?.(obj => (
+                <MenuItem key={obj?.option} value={obj?.option}>{obj?.value}</MenuItem>
+            ))}
+        </Select>
     );
 }
 

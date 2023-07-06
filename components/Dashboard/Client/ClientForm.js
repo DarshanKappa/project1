@@ -3,16 +3,15 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import SimpleInput2 from "../../Inputs/SimpleInput2";
-import PasswordInput2 from "../../Inputs/PasswordInput2";
+import SimpleInput2 from "@formFields/SimpleInput2";
+import PasswordInput2 from "@formFields/PasswordInput2";
 import { useForm } from "react-hook-form";
-import UserAddSVG from "../../SVGs/Article/UserAddSVG";
-import CertificateSVG from "../../SVGs/Article/CertificateSVG";
-import ChatPlusSVG from "../../SVGs/Article/ChatPlusSVG";
-import MessageSVG from "../../SVGs/Article/MessageSVG";
-import LockAltSVG from "../../SVGs/Article/LockAltSVG";
-import PhoneSVG from "../../SVGs/Article/PhoneSVG";
-
+import UserAddSVG from "@svgs/Article/UserAddSVG";
+import CertificateSVG from "@svgs/Article/CertificateSVG";
+import ChatPlusSVG from "@svgs/Article/ChatPlusSVG";
+import MessageSVG from "@svgs/Article/MessageSVG";
+import LockAltSVG from "@svgs/Article/LockAltSVG";
+import PhoneSVG from "@svgs/Article/PhoneSVG";
 
 
 function ClientForm({ onCloseModal }) {

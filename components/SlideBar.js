@@ -1,4 +1,4 @@
-import  SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 
 function SlideBar({ children, open, setOpen }) {
@@ -16,22 +16,20 @@ function SlideBar({ children, open, setOpen }) {
     };
 
     return (
-        <>
-            <SwipeableDrawer
-                sx={{ opacity: 1 }}
-                anchor="right"
-                open={open}
-                onClose={toggleDrawer(false)}
-                onOpen={toggleDrawer(true)}
-                ModalProps={{
-                    BackdropProps: {
-                        sx: { bgcolor: "rgb(0 0 0 / 12%)" }
-                    }
-                }}
-            >
-                {children}
-            </SwipeableDrawer>
-        </>
+        <SwipeableDrawer
+            sx={{ opacity: 1 }}
+            anchor="right"
+            open={open}
+            onClose={toggleDrawer(false)}
+            onOpen={toggleDrawer(true)}
+            ModalProps={{
+                BackdropProps: {
+                    sx: { bgcolor: "rgb(0 0 0 / 12%)" }
+                }
+            }}
+        >
+            {children}
+        </SwipeableDrawer>
     );
 }
 

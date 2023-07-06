@@ -1,8 +1,8 @@
 import React from "react";
 import ListDocument from "./ListDocument"
-import PDFSVG from "../../../SVGs/PDFSVG";
-import ExcelSVG from "../../../SVGs/ExcelSVG";
-import ZipSVG from "../../../SVGs/ZipSVG";
+import PDFSVG from "@svgs/PDFSVG";
+import ExcelSVG from "@svgs/ExcelSVG";
+import ZipSVG from "@svgs/ZipSVG";
 import DocumentMenuButton from "../DocumentMenu/DocumentMenuButton"
 
 
@@ -38,9 +38,7 @@ const width = [
 
 function ListViewTable({ }) {
     return (
-        <>
-            <ListDocument headers={headers} rows={rows} widths={width} />
-        </>
+        <ListDocument headers={headers} rows={rows} widths={width} />
     );
 }
 

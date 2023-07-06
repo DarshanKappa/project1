@@ -2,16 +2,16 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import StepperForm from "../components/Forms/StepperForm";
-import PersonalInformation from "../components/SignUp/Forms/PersonalInformation";
-import CompanyInformation from "../components/SignUp/Forms/CompanyInformation";
+import StepperForm from "@components/Forms/StepperForm";
+import PersonalInformation from "@components/SignUp/Forms/PersonalInformation";
+import CompanyInformation from "@components/SignUp/Forms/CompanyInformation";
 import Link from "next/link";
+
 
 const stepsName = [
 	"Personal Information",
 	"Company Information",
 ]
-
 
 function SignUp() {
 	return (

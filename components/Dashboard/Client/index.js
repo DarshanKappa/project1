@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import AdvanceTable from "../../Table/AdvanceTable";
+import AdvanceTable from "@components/Table/AdvanceTable";
 import React, { useState } from "react";
-import ArticleForm from "./ClientForm";
-import Modal from "../../Modal";
-import ClientMenuButton from "./ClientMenu/ClientMenuButton";
-import ClientMenu from "./ClientMenu";
+import Modal from "@components/Modal";
+import ClientMenu from "@components/Dashboard/Client/ClientMenu";
+import ClientMenuButton from "@components/Dashboard/Client/ClientMenu/ClientMenuButton";
+import ClientForm from "@components/Dashboard/Client/ClientForm";
 
 const headers = [
   { name: "Name", key: "name" },
@@ -130,7 +130,7 @@ const rows = [
   },
 ];
 
-function Clients({}) {
+function Clients({ }) {
   const [modal, setModal] = useState(false);
 
   const onCloseModal = () => {
@@ -169,17 +169,15 @@ function Clients({}) {
   };
 
   return (
-    <React.Fragment>
-      <ClientMenu>
-        <Box sx={{ px: 2, py: 2 }}>
-          <AdvanceTable {...tableProps} />
-        </Box>
+    <ClientMenu>
+      <Box sx={{ px: 2, py: 2 }}>
+        <AdvanceTable {...tableProps} />
+      </Box>
 
-        <Modal open={modal} onClose={onCloseModal}>
-          <ArticleForm onCloseModal={onCloseModal} />
-        </Modal>
-      </ClientMenu>
-    </React.Fragment>
+      <Modal open={modal} onClose={onCloseModal}>
+        <ClientForm onCloseModal={onCloseModal} />
+      </Modal>
+    </ClientMenu>
   );
 }
 

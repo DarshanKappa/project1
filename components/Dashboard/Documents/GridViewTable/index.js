@@ -1,7 +1,8 @@
+import React from "react";
 import AddDocumentCard from "./AddDocumentCard";
-import PDFSVG from "../../../SVGs/PDFSVG";
-import ExcelSVG from "../../../SVGs/ExcelSVG";
-import ZipSVG from "../../../SVGs/ZipSVG";
+import PDFSVG from "@svgs/PDFSVG";
+import ExcelSVG from "@svgs/ExcelSVG";
+import ZipSVG from "@svgs/ZipSVG";
 import DocumentCard from "./DocumentCard";
 
 const DocumentCardList = [
@@ -17,14 +18,14 @@ const DocumentCardList = [
 
 function GridViewTable({ }) {
     return (
-        <>
+        <React.Fragment>
             <AddDocumentCard />
             {
                 DocumentCardList.map((obj, index)=>(
                     <DocumentCard key={index} obj={obj} />
                 ))
             }
-        </>
+        </React.Fragment>
     );
 }
 

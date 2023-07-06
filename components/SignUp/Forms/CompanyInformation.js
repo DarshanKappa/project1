@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SimpleInput from "../../Inputs/SimpleInput";
-import { FormStepperContext } from "../../Forms/StepperForm";
-import CertificateSVG from "../../SVGs/CertificateSVG";
-import PercentSVG from "../../SVGs/PercentSVG";
-import MapSVG from "../../SVGs/MapSVG";
-import Map2SVG from "../../SVGs/Map2SVG";
-import CallSVG from "../../SVGs/CallSVG";
-import PinSVG from "../../SVGs/PinSVG";
+import SimpleInput from "@formFields/SimpleInput";
+import { FormStepperContext } from "@components/Forms/StepperForm";
+import CertificateSVG from "@svgs/CertificateSVG";
+import PercentSVG from "@svgs/PercentSVG";
+import MapSVG from "@svgs/MapSVG";
+import Map2SVG from "@svgs/Map2SVG";
+import CallSVG from "@svgs/CallSVG";
+import PinSVG from "@svgs/PinSVG";
 
 
 function CompanyInformation({ sx }) {
