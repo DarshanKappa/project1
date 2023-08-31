@@ -1,5 +1,6 @@
 import React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Stack } from "@mui/material";
 
 function ThemeContext({ children }) {
 
@@ -24,7 +25,7 @@ function ThemeContext({ children }) {
                     paper: {
                         main: "#DEE7EB"
                     }
-                },
+                }
             }
 
         }
