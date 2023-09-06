@@ -18,7 +18,7 @@ const logs = [
 		secondary: <>Tue, May 30, 2023 03: 17 PM (5 hours ago)</>
 	},
 	{
-		primary: <><strong>Lori Bedner</strong>has updated Document name form "Sample Doc.pdf" to "Sample PDF Doc.pdf"</>,
+		primary: <><strong>Lori Bedner</strong>{`has updated Document name form "Sample Doc.pdf" to "Sample PDF Doc.pdf"`}</>,
 		secondary: <>Tue, May 30, 2023 03: 17 PM (5 hours ago)</>
 	},
 	{
@@ -55,8 +55,8 @@ function ArticleDetails({ rowData }) {
 						<TabItem>
 							<ActivityLogs sx={{ pt: 4, pl: 8 }}>
 								{
-									logs?.map?.(child => (
-										<Log primary={child.primary} secondary={child.secondary} />
+									logs?.map?.((child, i) => (
+										<Log key={i} primary={child.primary} secondary={child.secondary} />
 									))
 								}
 							</ActivityLogs>

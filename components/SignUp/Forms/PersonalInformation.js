@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import PasswordInput from "@formFields/PasswordInput";
 import SimpleInput from "@formFields/SimpleInput";
 import SelectInput2 from "@formFields/SelectInput2";
-import { FormStepperContext } from "@formFields/StepperForm";
+import { FormStepperContext } from "components/Forms/StepperForm";
 import UserDuotoneSVG from "@svgs/UserDuotone";
 import UserDuotone2SVG from "@svgs/UserDuotone2SVG";
 import MessageSVG from "@svgs/MessageSVG";
@@ -104,7 +104,7 @@ function PersonalInformation({ sx }) {
 					>
 						{
 							options?.map(op=>(
-								<MenuItem value={op}>{op}</MenuItem>
+								<MenuItem key={op} value={op}>{op}</MenuItem>
 							))
 						}
 					</SelectInput2>

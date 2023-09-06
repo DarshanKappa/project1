@@ -10,7 +10,7 @@ function SimpleInput({ register = () => { }, label, name, icon, sx, inputProps, 
 	return (
 		<>
 			<Stack sx={{ width: "100%", ...sx }}>
-				<Typography sx={{ mb: 1, userSelect: "none" }} variant="body1" color="black	">{label}</Typography>
+				<Typography sx={{ mb: 1, userSelect: "none" }} variant="body1" color="black	">{label}</		Typography>
 				<InputBase
 					{...(name && register(name))}
 					fullWidth

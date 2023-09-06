@@ -5,13 +5,13 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import SimpleInput2 from "@formFields/SimpleInput2";
 import PasswordInput2 from "@formFields/PasswordInput2";
-import { useForm } from "react-hook-form";
 import UserAddSVG from "@svgs/Article/UserAddSVG";
 import CertificateSVG from "@svgs/Article/CertificateSVG";
 import ChatPlusSVG from "@svgs/Article/ChatPlusSVG";
 import MessageSVG from "@svgs/Article/MessageSVG";
 import LockAltSVG from "@svgs/Article/LockAltSVG";
 import PhoneSVG from "@svgs/Article/PhoneSVG";
+import { useForm } from "react-hook-form";
 
 
 function ClientForm({ onCloseModal }) {

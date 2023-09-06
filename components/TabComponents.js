@@ -15,7 +15,7 @@ function TabContainer({ children }) {
                 <Tabs value={tab} onChange={(_, v) => setTab(v)}>
                     {
                         children?.[0]?.props?.children?.map((tab, index) => (
-                            <Tab sx={{ textTransform: "none", fontWeight: 600, fontSize: 16, color: "primary.75%", "&.Mui-selected": { color: "primary.main", } }} index={index} label={tab.props.children} />
+                            <Tab key={index} sx={{ textTransform: "none", fontWeight: 600, fontSize: 16, color: "primary.75%", "&.Mui-selected": { color: "primary.main", } }} index={index} label={tab.props.children} />
                         ))
                     }
                 </Tabs>
@@ -23,7 +23,7 @@ function TabContainer({ children }) {
                     {
                         Array.isArray(children?.[1]?.props?.children) ? (
                             children?.[1]?.props?.children?.map((cont, index) => (
-                                tab === index ? cont : <React.Fragment />
+                                tab === index ? cont : <React.Fragment key={index} />
                             ))
                         ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
                     }
@@ -43,7 +43,7 @@ function TabContainer({ children }) {
                     {
                         Array.isArray(children?.[1]?.props?.children) ? (
                             children?.[1]?.props?.children?.map((cont, index) => (
-                                0 === index ? cont : <React.Fragment />
+                                0 === index ? cont : <React.Fragment key={index} />
                             ))
                         ) : tab === 0 ? children?.[1]?.props?.children : <React.Fragment />
                     }
