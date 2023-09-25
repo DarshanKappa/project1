@@ -9,6 +9,14 @@ import SettingMenuSVG from "@svgs/SettingMenuSVG";
 import Documents from "@components/Dashboard/Documents";
 import Clients from "@components/Dashboard/Client";
 import useShallowRouter from "@hooks/useShallowRouter";
+import { jsPDF } from 'jspdf';
+import { Box, Button } from "@mui/material";
+// import webshot from "webshot";
+import domtoimage from 'dom-to-image';
+import { CookieSharp } from "@mui/icons-material";
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+
+
 
 
 const menuItems = [
@@ -58,14 +66,80 @@ function Dashboard({ }) {
 	const { value, push } = useShallowRouter(routeList, "slug")
 
 	return (
-		<MainLayout menuItemList={menuItems} selectedItem={value}  >
-			<MainPage>
-				{(value === "Articles" && <Articles />)}
-				{(value === "Clients" && <Clients />)}
-				{(value === "Documents" && <Documents />)}
-				{/* {(selectedItem === "Settings" && <Articles />)} */}
-			</MainPage>
-		</MainLayout>
+		<>
+			<Button
+				variant="contained"
+				onClick={async () => {
+					const node = document.getElementById('pdf');
+					toPng(node, {})
+						.then(async (url) => {
+
+							const a = document.createElement('a');
+							a.style.display = 'none';
+							a.href = url;
+							// the filename you want
+							a.download = 'todo-1.png';
+							document.body.appendChild(a);
+							a.click();
+						})
+
+						
+					// 		domtoimage.toPng(node)
+					// 			.then(async function (dataUrl) {
+					// 				console.log("-------------data URL-----------------")
+					// 				console.log(dataUrl)
+					// 				var img = new Image();
+					// 				img.src = dataUrl;
+
+					// 				let res = await fetch(dataUrl)
+					// 				let data = await res.blob();
+					// 				let metadata = {
+					// 					type: 'image/png'
+					// 					// type: 'application/pdf'
+					// 				};
+					// 				let file = new File([data], "test.png", metadata);
+					// 				console.log(file)
+
+					// 				// const url = window.URL.createObjectURL(file);
+					// 				// const a = document.createElement('a');
+					// 				// a.style.display = 'none';
+					// 				// a.href = url;
+					// 				// // the filename you want
+					// 				// a.download = 'todo-1.png';
+					// 				// document.body.appendChild(a);
+					// 				// a.click();
+					// 				// window.URL.revokeObjectURL(dataUrl);
+
+					// 				            var doc = new jsPDF();
+					// doc.addImage(dataUrl, 'PNG', 15, 40, 180, 180);
+					// doc.save('pension-report' + '.pdf');
+
+
+					// 				jsPDF()
+
+
+					// 				document.body.appendChild(img);
+					// 				console.log("OKkd-=====================================");
+					// 			})
+					// 			.catch(function (error) {
+					// 				console.error('oops, something went wrong!', error);
+					// 			});
+				}}
+			>
+				HTML to PDF
+			</Button>
+			<Box id="pdf">
+
+				<MainLayout menuItemList={menuItems} selectedItem={value}  >
+					<MainPage>
+						{(value === "Articles" && <Articles />)}
+						{(value === "Clients" && <Clients />)}
+						{(value === "Documents" && <Documents />)}
+						{/* {(selectedItem === "Settings" && <Articles />)} */}
+					</MainPage>
+				</MainLayout>
+			</Box>
+		</>
 	);
 }
 

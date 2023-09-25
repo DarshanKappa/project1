@@ -27,7 +27,21 @@ const rows = [
     company: "Fero.ai",
   },
   {
-    name: "Tvisha Patel",
+    name: "Jaimin Jethva",
+    username: "Software Engineer",
+    email: "darshan.prajapati@fero.ai",
+    contactNumber: "9865742154",
+    company: "Fero.ai",
+  },
+  {
+    name: "Sahil Chauhan",
+    username: "Software Engineer",
+    email: "darshan.prajapati@fero.ai",
+    contactNumber: "9865742154",
+    company: "Fero.ai",
+  },
+  {
+    name: "Darshan Prajapti",
     username: "Software Engineer",
     email: "darshan.prajapati@fero.ai",
     contactNumber: "9865742154",
@@ -55,13 +69,6 @@ const rows = [
     company: "Fero.ai",
   },
   {
-    name: "Tvisha Patel",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
     name: "Jaimin Jethva",
     username: "Software Engineer",
     email: "darshan.prajapati@fero.ai",
@@ -77,41 +84,6 @@ const rows = [
   },
   {
     name: "Darshan Prajapti",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
-    name: "Tvisha Patel",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
-    name: "Jaimin Jethva",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
-    name: "Sahil Chauhan",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
-    name: "Darshan Prajapti",
-    username: "Software Engineer",
-    email: "darshan.prajapati@fero.ai",
-    contactNumber: "9865742154",
-    company: "Fero.ai",
-  },
-  {
-    name: "Tvisha Patel",
     username: "Software Engineer",
     email: "darshan.prajapati@fero.ai",
     contactNumber: "9865742154",
@@ -200,23 +172,25 @@ function Articles({ }) {
   };
 
   return (
-    <ArticleMenu onMenuItemClick={onMenuItemClick} menuItems={menuItems}>
-      {menuitem ? (
-        <>
-          {menuitem === "view" && <ArticleDetails rowData={rowData} />}
-          {menuitem === "edit" && <>Edit</>}
-          {menuitem === "delete" && <>Delete</>}
-        </>
-      ) : (
-        <Box sx={{ px: 2, py: 2 }}>
-          <AdvanceTable {...tableProps} />
-        </Box>
-      )}
+    <Box>
+      <ArticleMenu onMenuItemClick={onMenuItemClick} menuItems={menuItems}>
+        {menuitem ? (
+          <>
+            {menuitem === "view" && <ArticleDetails rowData={rowData} />}
+            {menuitem === "edit" && <>Edit</>}
+            {menuitem === "delete" && <>Delete</>}
+          </>
+        ) : (
+          <Box sx={{ px: 2, py: 2 }}>
+            <AdvanceTable {...tableProps} />
+          </Box>
+        )}
 
-      <Modal open={modal} onClose={onCloseModal}>
-        <ArticleForm onCloseModal={onCloseModal} />
-      </Modal>
-    </ArticleMenu>
+        <Modal open={modal} onClose={onCloseModal}>
+          <ArticleForm onCloseModal={onCloseModal} />
+        </Modal>
+      </ArticleMenu>
+    </Box>
   );
 }
 
